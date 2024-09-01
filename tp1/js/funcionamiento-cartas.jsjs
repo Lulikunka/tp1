@@ -1,0 +1,21 @@
+let nombre;
+const palos=["oro","copa","basto","espada"];
+const numero=[1,2,3,4,5,6,7,10,11,12];
+let valor;
+let carta={};
+let mazo=[];
+
+//Preguntar nombre del jugador
+
+//Crear mazo uniendo numeros, palos y valores
+
+
+//Barajar mazo y repartir cartas-->3 cartas al azar p. c/jugador
+
+//Funcionamiento de la ronda
+
+//Apuestas--> ventana que surge con tres opciones para que el usuario marque cuánto apostar
+
+//Registrar puntos y verificar ganador
+
+//Lógica del juego
