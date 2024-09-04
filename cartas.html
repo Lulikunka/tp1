@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nena NANA: Cartas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="contenedor">
+            <header>
+                    <h1>Broken Rose: Nena-NANA</h1>
+                    <h2>Punky blog</h2>
+                <nav>
+                    <ul>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="cartas.html">Cartas</a></li>
+                            <li><a href="dados.html">Generala</a></li>
+                            <li><a href="preguntas.html">Trivia</a></li>
+                            <li><a href="posiciones.html">Posiciones</a></li>
+                            <li><a href="creditos.html">Nosotros</a></li>
+                        </ul>
+                    </ul>
+                </nav>
+            </header>
+            <section id="instruccionesCartas">
+                <h3>Jugando a las cartas con Shin</h3>
+                <img id="imgCartas" src="imagenes/caratula-cartas.jpg" alt="Ren y Shin jugando a las cartas">
+                <div id="instrucciones">
+                    <h4>Instrucciones:</h4>
+                    <ul>
+                        <li>Se juega con una baraja española de 40 cartas. Las cartas numéricas (del 1 al 7) valen su número en puntos. Las figuras (sota, caballo y rey) valen 10 puntos cada una. </li>
+                        <li>Al iniciar un nuevo turno, cada jugador recibe 3 cartas al azar del mazo y debe decidir la cantidad de puntos a apostar. <strong>Puede apostar 5, 10 o 15 puntos</strong> zx.</li>
+                        <li>El turno tiene 3 rondas, una por cada carta recibida. En cada ronda los jugadores tiran una carta y gana la ronda quien haya tirado la carta de mayor valor. </li>
+                        <li>Al finalizar el turno, el jugador que haya ganado más rondas suma los puntos apostados por ambos jugadores.</li>
+                        <li><span id="puntos">El ganador será quien llegue o supere primero los 50 PUNTOS</span></li>
+                        <li> Si hay empate en el turno, los puntos se dividen entre los dos jugadores.</li>
+                        <li>Si al finalizar el turno ningún jugador alcanzó los 50 puntos, se juega un nuevo turno.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="jugadores">
+                <section>
+                    <article>
+                        <p>Sus cartas son:</p>
+                        <div class="mostrarCartasimg1">
+                            <!--Hay que insertar la imágen de las cartas-->
+                            </div>
+                        <ul id="ulJugadorUno">
+                        </ul>
+                        <button class="cartasjugadorUnoButton">Jugador Uno</button>
+                    </article>
+                </section>
+                <section>
+                    <article>
+                        <p>Sus cartas son:</p>
+                        <div class="mostrarCartasimg1">
+                        <!--Hay que insertar la imágen de las cartas-->
+                        </div>
+                        <ul id="ulJugadorDos">
+                        </ul>
+                    </article>
+                    <button class="cartasJugadorDosButton">Jugador Dos</button>
+                </section>
+            </div>
+        </div>
+        <footer>
+            <img id="nanaLogo" src="imagenes/Nana_anime_logo.png" alt="Logo de NANA">
+            <p>Desarrollado por Luciana Niemchikof para la materia Informática General en la facultad de Artes Multimediales de la Universidad Nacional de las Artes.<br> Para consultas o sugerencias contactarse a <a href="mailto:luniemch@hotmail.com">luniemch@hotmail.com</a></p>
+        </footer>
+        <script src="js/funcionamiento-cartas.js"></script>
+    </body>
+</html>
