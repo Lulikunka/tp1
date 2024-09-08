@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nena NANA: Cartas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="contenedor">
+            <header>
+                    <h1>Broken Rose: Nena-NANA</h1>
+                    <h2>Punky blog</h2>
+                <nav>
+                    <ul>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="cartas.html">Cartas</a></li>
+                            <li><a href="dados.html">Generala</a></li>
+                            <li><a href="preguntas.html">Trivia</a></li>
+                            <li><a href="posiciones.html">Posiciones</a></li>
+                            <li><a href="creditos.html">Nosotros</a></li>
+                        </ul>
+                    </ul>
+                </nav>
+            </header>
+            <section id="instruccionesCartas">
+                <h3>Jugando a las cartas con Shin</h3>
+                <img id="imgCartas" src="imagenes/caratula-cartas.jpg" alt="Ren y Shin jugando a las cartas">
+                <div id="instrucciones">
+                    <h4>Instrucciones:</h4>
+                    <ul>
+                        <li>Se juega con una baraja española de 40 cartas. Las cartas numéricas (del 1 al 7) valen su número en puntos. Las figuras (sota, caballo y rey) valen 10 puntos cada una. </li>
+                        <li>Al iniciar un nuevo turno, cada jugador recibe 3 cartas al azar del mazo y debe decidir la cantidad de puntos a apostar. <strong>Puede apostar 5, 10 o 15 puntos</strong></li>
+                        <li>El turno tiene 3 rondas, una por cada carta recibida. En cada ronda los jugadores tiran una carta y gana la ronda quien haya tirado la carta de mayor valor. </li>
+                        <li>Al finalizar el turno, el jugador que haya ganado más rondas suma los puntos apostados por ambos jugadores.</li>
+                        <li><span id="puntos">El ganador será quien llegue o supere primero los 50 PUNTOS</span></li>
+                        <li> Si hay empate en el turno, los puntos se dividen entre los dos jugadores.</li>
+                        <li>Si al finalizar el turno ningún jugador alcanzó los 50 puntos, se juega un nuevo turno.
+                        </li>
+                        <li>IMPORTANTE: A mayores puntos apostados, más puntos se ganan, pero también pueden perderse. Juegá con astucia!</li>
+                    </ul>
+                    <!--Paso 1: Iniciar juego-->
+                    <button class="comenzarJuego">Quiero jugar!</button>
+                </div>
+            </section>
+            <div id="registrarseCartasAvatar"> <!--div para controlar el avatar-->
+                <h4>¡Elegí tu avatar!</h4>
+                <section class="avatar">
+                    <div>
+                    <img class="imgAvatar" id="avatarRen" src="imagenes/avatar-ren.jpg" alt="Ren Honjo">
+                    <p class="avatarDescripción">Ren Honjo</p>
+                    </div>
+                    <div>
+                        <img class="imgAvatar" id="avatarNana" src="imagenes/avatar-nana.jpg" alt="Ren Honjo">
+                        <p class="avatarDescripción">Nana Osaki</p> 
+                    </div>
+                </section>
+            </div>
+            <div class="divJuegoDeCartas">
+                <!--paso 4: "Inicio de juego: dar cartas"-->
+                <section><!--Sección para el jugador 1-->
+                    <article>
+                        <p id="nombreJugadorUno"></p>
+                        <ul id="ulJugadorUno">
+                        <!--ul para mostrar las cartas repartidas j1-->
+                        </ul>
+                    </article>
+                </section>
+
+                <!--Sección para el botón de comienzp de partida. Luego se cambia por el formulario de apuesta.-->
+                <section class="sectionBotonComenzarPartida">
+                    <button class="botonComenzarPartida">Comenzar partida!</button>
+                </section>
+                <section id="apuesta"> <!--Paso 5: apostar-->
+                    <fieldset>
+                        <legend>¿Cuánto desea apostar?</legend>
+                        <input type="radio" name="cursa" id="cursa1" value="5">
+                        <label for="cursa1">5 puntos</label>
+                        <input type="radio" name="cursa" id="cursa2" value="10">
+                        <label for="cursa2">10 puntos</label>
+                        <input type="radio" name="cursa" id="cursa3" value="15">
+                        <label for="cursa3">15 puntos</label>
+                    </fieldset>
+                </section>
+
+                <section><!--Sección para el jugador 2-->
+                    <article>
+                        <p>Shin</p>
+                        <ul id="ulJugadorDos">
+                            <!--ul para mostrar las cartas repartidas j1-->
+                        </ul>
+                    </article>
+                    
+                </section>
+            </div>
+
+            <section><!--section solo contiene las imágenes para mostar-->
+                <article id="repositorioCartas">
+                    <img id="carta-0" src="imagenes/carta0.png" alt="Carta al revés">
+                    <img class="imgCarta" src="imagenes/carta1.png" alt="1 de Oro">
+                    <img class="imgCarta" src="imagenes/carta2.png" alt="2 de Oro">
+                    <img class="imgCarta" src="imagenes/carta3.png" alt="3 de Oro">
+                    <img class="imgCarta" src="imagenes/carta4.png" alt="4 de Oro">
+                    <img class="imgCarta" src="imagenes/carta5.png" alt="5 de Oro">
+                    <img class="imgCarta" src="imagenes/carta6.png" alt="6 de Oro">
+                    <img class="imgCarta" src="imagenes/carta7.png" alt="7 de Oro">
+                    <img class="imgCarta" src="imagenes/carta8.png" alt="10 de Oro">
+                    <img class="imgCarta" src="imagenes/carta9.png" alt="11 de Oro">
+                    <img class="imgCarta" src="imagenes/carta10.png" alt="12 de Oro">
+                    <img class="imgCarta" src="imagenes/carta11.png" alt="1 de Copas">
+                    <img class="imgCarta" src="imagenes/carta12.png" alt="2 de Copas">
+                    <img class="imgCarta" src="imagenes/carta13.png" alt="3 de Copas">
+                    <img class="imgCarta" src="imagenes/carta14.png" alt="4 de Copas">
+                    <img class="imgCarta" src="imagenes/carta15.png" alt="5 de Copas">
+                    <img class="imgCarta" src="imagenes/carta16.png" alt="6 de Copas">
+                    <img class="imgCarta" src="imagenes/carta17.png" alt="7 de Copas">
+                    <img class="imgCarta" src="imagenes/carta18.png" alt="10 de Copas">
+                    <img class="imgCarta" src="imagenes/carta19.png" alt="11 de Copas">
+                    <img class="imgCarta" src="imagenes/carta20.png" alt="12 de Copas">
+                    <img class="imgCarta" src="imagenes/carta21.png" alt="1 de Basto">
+                    <img class="imgCarta" src="imagenes/carta22.png" alt="2 de Basto">
+                    <img class="imgCarta" src="imagenes/carta23.png" alt="3 de Basto">
+                    <img class="imgCarta" src="imagenes/carta24.png" alt="4 de Basto">
+                    <img class="imgCarta" src="imagenes/carta25.png" alt="5 de Basto">
+                    <img class="imgCarta" src="imagenes/carta26.png" alt="6 de Basto">
+                    <img class="imgCarta" src="imagenes/carta27.png" alt="7 de Basto">
+                    <img class="imgCarta" src="imagenes/carta28.png" alt="10 de Basto">
+                    <img class="imgCarta" src="imagenes/carta29.png" alt="11 de Basto">
+                    <img class="imgCarta" src="imagenes/carta30.png" alt="12 de Basto">
+                    <img class="imgCarta" src="imagenes/carta31.png" alt="1 de Espadas">
+                    <img class="imgCarta" src="imagenes/carta32.png" alt="2 de Espadas">
+                    <img class="imgCarta" src="imagenes/carta33.png" alt="3 de Espadas">
+                    <img class="imgCarta" src="imagenes/carta34.png" alt="4 de Espadas">
+                    <img class="imgCarta" src="imagenes/carta35.png" alt="5 de Espadas">
+                    <img class="imgCarta" src="imagenes/carta36.png" alt="6 de Espadas">
+                    <img class="imgCarta" src="imagenes/carta37.png" alt="7 de Espadas">
+                    <img class="imgCarta" src="imagenes/carta38.png" alt="10 de Espadas">
+                    <img class="imgCarta" src="imagenes/carta39.png" alt="11 de Espadas">
+                    <img class="imgCarta" src="imagenes/carta40.png" alt="12 de Espadas">
+                </article>
+            </section>
+        </div>
+        
+        </div>
+        <footer>
+            <img id="nanaLogo" src="imagenes/Nana_anime_logo.png" alt="Logo de NANA">
+            <p>Desarrollado por Luciana Niemchikof para la materia Informática General en la facultad de Artes Multimediales de la Universidad Nacional de las Artes.<br> Para consultas o sugerencias contactarse a <a href="mailto:luniemch@hotmail.com">luniemch@hotmail.com</a></p>
+        </footer>
+        <script src="js/funcionamiento-cartas.js"></script>
+    </body>
+</html>

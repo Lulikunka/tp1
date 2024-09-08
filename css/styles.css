@@ -1,0 +1,376 @@
+body{
+    background-color: black;
+    color: aliceblue;
+}
+#contenedor{
+    background-color: #000;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    text-indent: 1em;
+    margin: 0;
+    padding: .5em;
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+/*Menú de navegación general*/
+nav{
+    width: 100%;
+    background-repeat: repeat;
+    display: block;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+
+}
+nav ul,#ulJugadorUno,#ulJugadorDos{
+    margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+nav ul li,#ulJugadorUno,#ulJugadorDos{
+    display: block;
+}
+li a{
+    font-size: 1em;
+	line-height: 44px;
+	padding: .5em 1em;
+	text-align: center;
+	text-decoration: none;
+    box-sizing: border-box;
+    -webkit-border-radius: 10;
+  	-moz-border-radius: 10;
+ 	border-radius: 10px;
+}
+nav a:link{
+    background-color: #d11382;
+	color:#FFF;
+}
+nav a:visited{
+    background-color:#d11382;
+	color: #FFF;
+}
+
+nav a:hover{
+    background-color: #000;
+	color: #FFF;
+}
+nav a:active{
+    background-color: rgb(221, 202, 33);
+	color: #FFF;
+}
+footer{
+    background-color: rgb(31, 31, 31);
+    width: 100%;
+   margin-top: 3em;
+   padding: .3em;
+}
+footer p{
+    font-size: 13px;
+    margin: 1em;
+    padding: .5em;
+}
+footer a:link{
+    color:#d11382;
+    text-decoration: none;
+}
+footer a:visited{
+    color:#d11382;
+    text-decoration: none;
+}
+footer a:hover{
+    color:rgba(245, 227, 255, 0.67);	
+}
+footer a:active{
+    color:  rgb(221, 202, 33);
+}
+#menu{
+    background-color: #000;
+    padding: 1em;
+
+}
+h1,h2,h3,h4{
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+h3,h4{
+    font-size: 2em;
+}
+.titulitoIndex{
+    color: #d11382;
+}
+h1, h2{
+    color: #d11382;
+    -webkit-text-stroke-width: .02em;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+}
+h1{
+    font-size: 4em;
+    text-align: center;
+    
+}
+h2{
+    font-size: 1.5em;
+}
+header{
+    background-color: #4b072f;
+    padding: .5em;
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+   border-radius: 10px;
+}
+p{
+    font-size: 16px;
+}
+
+/*Menú en el cuerpo del body del index*/
+#menuJuegos{
+    display: flex;
+    flex-direction: column;
+	justify-content: center;
+	padding: 2em;
+}
+#menuJuegos a{
+    text-decoration: none;
+}
+#menuJuegos a article{
+    background-color: rgb(82, 31, 109);
+    text-decoration: none;
+	margin: 1em;
+	padding: 1.5em;
+	-webkit-border-radius: 10;
+  	-moz-border-radius: 10;
+ 	border-radius: 10px;
+}
+#menuJuegos a:nth-child(2n) article{
+    background-color: #d11382;
+	text-decoration: none;
+    margin: 1em;
+	padding: 2em;
+	-webkit-border-radius: 10;
+  	-moz-border-radius: 10;
+ 	border-radius: 10px;
+}
+#menuJuegos a article:hover{
+    background: rgba(245, 227, 255, 0.67);	
+	margin: 1em;
+	text-decoration: none;
+	padding: 2em;
+	-webkit-border-radius: 25;
+  	-moz-border-radius: 25;
+ 	border-radius: 25px;
+}
+#menuJuegos a:nth-child(2n) article:hover{
+    background-color: rgba(248, 160, 186, 0.67);
+	margin: 1em;
+	text-decoration: none;
+	padding: 2em;
+	-webkit-border-radius: 25;
+  	-moz-border-radius: 25;
+ 	border-radius: 25px;
+}
+#menuJuegos a:active{
+    border:.2em solid rgb(221, 202, 33);
+	-webkit-border-radius: 25;
+  	-moz-border-radius: 25;
+ 	border-radius: 25px;
+}
+#menuJuegos a article p{
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	text-align: center;
+	font-size: 20px;
+}
+.imgMenu{
+	max-width: 200px;
+    width: 100%;
+    text-align: center;
+}
+
+#revistaCookie{
+    width: 20%;
+    display: block;
+}
+#manga1{
+    width: 20%;
+    display: block;
+}
+#nanaLogo{
+    display: none;
+    visibility: hidden;
+}
+
+/*Específico de la página de cartas
+El ul y el li, ulJugadorUno y ulJugadorDos, lo comparte con el nav, más arriba*/
+#repositorioCartas{
+    width:10%;
+    display: none;
+}
+
+span{
+    color:#d11382;
+}
+#instruccionesCartas,#instruccionesGenerala{
+    border: .2em solid #024b6dd8;
+    padding: 1.5em;
+    margin: 0.5em;
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+   border-radius: 10px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+#imgCartas,#imgGenerala{
+    width: 70%;
+    align-self: center;
+}
+.comenzarJuego,.botonComenzarPartida,.dadosButton{
+    padding: .5em 1em;
+    background-color:#024b6dd8;
+    color: white;
+    border: none;
+    border-radius: .1em;
+    cursor:pointer;
+    -webkit-border-radius: 25;
+  	-moz-border-radius: 25;
+ 	border-radius: 25px;
+}
+.comenzarJuego{
+    font-size: 1.3em;
+}
+#instrucciones{
+    display: flex;
+    flex-direction: column;
+}
+.divJuegoDeCartas, #registrarseCartasAvatar{
+    display: none;
+    visibility: hidden;
+}
+.avatar{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.avatar div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.imgAvatar{
+    width: 40%;
+    padding: 1em;
+}
+
+/*Específico de la página de Generala*/
+#instuccionesGenerala h2{
+    text-align: center;
+}
+
+#instruccionesGenerala ul{
+    margin: 0;
+    padding: 0;
+    list-style-type:circle;
+}
+.jugadores{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.jugadores section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+      
+.dadosButton:hover {
+    background-color: #045d86d8;
+}
+      
+.dadosButton:active{
+    background-color: #066fa0d8;
+}
+
+
+      
+
+@media (min-width:480px){
+    body{
+        background-image: url(../imagenes/fondo.jpg);
+        color: aliceblue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #contenedor, footer{
+        width: 75%;
+        margin: 0 auto;
+        -webkit-border-radius: 10;
+        -moz-border-radius: 10;
+        border-radius: 10px;
+    }
+    footer{
+        margin-top: 5em;
+        -webkit-border-radius: 10;
+        -moz-border-radius: 10;
+       border-radius: 10px;
+    }
+    footer p{
+        -webkit-border-radius: 10;
+        -moz-border-radius: 10;
+       border-radius: 10px;
+    }
+    nav{
+        -webkit-border-radius: 10;
+        -moz-border-radius: 10;
+       border-radius: 10px;
+    }
+    nav ul,#ulJugadorUno,#ulJugadorDos{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    nav ul li{
+        display: inline;
+    }
+    #menu{
+        padding: 2em;
+    }
+    #menuJuegos{
+        flex-direction: row;
+    }
+    p{
+        font-size: 18px;
+    }
+    #revistaCookie, #manga1,#nanaLogo{
+        display: inline;
+        padding: 1em;
+    }
+    #revistaCookie{
+        float: inline-end; 
+    }
+    #manga1{
+        float: inline-start;
+    }
+    #nanaLogo{
+        display: inline;
+        visibility: visible;
+        float: inline-start;
+        width: 9%;
+    }
+    #instruccionesGenerala{
+        border: .3em solid #024b6dd8;
+        padding: 2em;
+        margin: 1em;
+    }
+    
+}
