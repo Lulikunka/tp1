@@ -18,61 +18,80 @@
                     <h2>Punky blog</h2>
                 <nav>
                     <ul>
-                        <ul>
-                            <li><a href="index.html">Inicio</a></li>
-                            <li><a href="cartas.html">Cartas</a></li>
-                            <li><a href="dados.html">Generala</a></li>
-                            <li><a href="preguntas.html">Trivia</a></li>
-                            <li><a href="posiciones.html">Posiciones</a></li>
-                            <li><a href="creditos.html">Nosotros</a></li>
-                        </ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="cartas.html">Cartas</a></li>
+                        <li><a href="dados.html">Generala</a></li>
+                        <li><a href="preguntas.html">Trivia</a></li>
+                        <li><a href="posiciones.html">Posiciones</a></li>
+                        <li><a href="creditos.html">Nosotros</a></li>
                     </ul>
                 </nav>
             </header>
             <section id="instruccionesCartas">
                 <h3>Jugando a las cartas con Shin</h3>
-                <img id="imgCartas" src="imagenes/caratula-cartas.jpg" alt="Ren y Shin jugando a las cartas">
+                <img id="imgCaratulaCartas" src="imagenes/caratula-cartas.jpg" alt="Ren y Shin jugando a las cartas">
                 <div id="instrucciones">
                     <h4>Instrucciones:</h4>
                     <ul>
                         <li>Se juega con una baraja española de 40 cartas. Las cartas numéricas (del 1 al 7) valen su número en puntos. Las figuras (sota, caballo y rey) valen 10 puntos cada una. </li>
-                        <li>Al iniciar un nuevo turno, cada jugador recibe 3 cartas al azar del mazo y debe decidir la cantidad de puntos a apostar. <strong>Puede apostar 5, 10 o 15 puntos</strong></li>
+                        <li>Al iniciar un nuevo turno, cada jugador recibe 3 cartas al azar del mazo y debe decidir la cantidad de puntos a apostar. <strong>Puede apostar 5, 10 o 15 puntos</strong>.</li>
                         <li>El turno tiene 3 rondas, una por cada carta recibida. En cada ronda los jugadores tiran una carta y gana la ronda quien haya tirado la carta de mayor valor. </li>
                         <li>Al finalizar el turno, el jugador que haya ganado más rondas suma los puntos apostados por ambos jugadores.</li>
                         <li><span id="puntos">El ganador será quien llegue o supere primero los 50 PUNTOS</span></li>
                         <li> Si hay empate en el turno, los puntos se dividen entre los dos jugadores.</li>
                         <li>Si al finalizar el turno ningún jugador alcanzó los 50 puntos, se juega un nuevo turno.
                         </li>
-                        <li>IMPORTANTE: A mayores puntos apostados, más puntos se ganan, pero también pueden perderse. Juegá con astucia!</li>
+                        <li>IMPORTANTE: A mayores puntos apostados, más puntos se ganan, pero también pueden perderse. Jugá con astucia!</li>
                     </ul>
                     <!--Paso 1: Iniciar juego-->
                     <button class="comenzarJuego">Quiero jugar!</button>
                 </div>
             </section>
+
+            <!--Paso 1: registarse con nombre-->
+            <div id="registrarseCartasNombre">
+                <form action="#" method="get"> <!--HAY QUE SOLUCIONAR ESTO!-->
+                    <fieldset>
+                        <legend>Ingresa tu nombre</legend>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" name="nombre" id="nombre" required>
+                    </fieldset>
+                </form>
+            </div>
+            <!--Paso 2: redistrarse con un avatar-->
             <div id="registrarseCartasAvatar"> <!--div para controlar el avatar-->
-                <h4>¡Elegí tu avatar!</h4>
                 <section class="avatar">
-                    <div>
-                    <img class="imgAvatar" id="avatarRen" src="imagenes/avatar-ren.jpg" alt="Ren Honjo">
-                    <p class="avatarDescripción">Ren Honjo</p>
-                    </div>
-                    <div>
-                        <img class="imgAvatar" id="avatarNana" src="imagenes/avatar-nana.jpg" alt="Ren Honjo">
-                        <p class="avatarDescripción">Nana Osaki</p> 
-                    </div>
+                    <form action="#" method="get">
+                        <fieldset>
+                            <legend>¡Elegí tu avatar!</legend>
+                            <input type="radio" name="avatar" id="ren" value="ren">
+                            <label for="ren"><img class="imgAvatar" id="avatarRen" src="imagenes/avatar-ren.jpg" alt="Ren Honjo"> Ren Honjo</label>
+                            <input type="radio" name="avatar" id="nana" value="nana">
+                            <label for="nana"><img class="imgAvatar" id="avatarNana" src="imagenes/avatar-nana.jpg" alt="Ren Honjo">Nana Osaki</label>
+                        </fieldset>
+                    </form>
+                    <button type="submit" id="submitAvatar">Aceptar</button>
                 </section>
             </div>
             <div class="divJuegoDeCartas">
                 <!--paso 4: "Inicio de juego: dar cartas"-->
-                <section><!--Sección para el jugador 1-->
+                <section><!--Sección para el jugador 2-->
                     <article>
-                        <p id="nombreJugadorUno"></p>
-                        <ul id="ulJugadorUno">
-                        <!--ul para mostrar las cartas repartidas j1-->
+                        <div class="jugadorYPuntaje">
+                            <div>
+                                <p>Shin</p>
+                                <img id="perfilShin" src="imagenes/avatar-shin.jpg" alt="Shin">
+                            </div>
+                            <div>
+                                <p class="textoPuntos">Puntos:</p>
+                                <p class="puntos"></p>
+                            </div>
+                        </div>
+                        <ul id="ulJugadorDos">
+                            <!--ul para mostrar las cartas repartidas j1-->
                         </ul>
                     </article>
                 </section>
-
                 <!--Sección para el botón de comienzp de partida. Luego se cambia por el formulario de apuesta.-->
                 <section class="sectionBotonComenzarPartida">
                     <button class="botonComenzarPartida">Comenzar partida!</button>
@@ -80,29 +99,39 @@
                 <section id="apuesta"> <!--Paso 5: apostar-->
                     <fieldset>
                         <legend>¿Cuánto desea apostar?</legend>
-                        <input type="radio" name="cursa" id="cursa1" value="5">
-                        <label for="cursa1">5 puntos</label>
-                        <input type="radio" name="cursa" id="cursa2" value="10">
-                        <label for="cursa2">10 puntos</label>
-                        <input type="radio" name="cursa" id="cursa3" value="15">
-                        <label for="cursa3">15 puntos</label>
+                        <input type="radio" name="apuesta" id="apuesta1" value="5">
+                        <label for="apuesta1">5 puntos</label>
+                        <input type="radio" name="apuesta" id="apuesta2" value="10">
+                        <label for="apuesta2">10 puntos</label>
+                        <input type="radio" name="apuesta" id="apuesta3" value="15">
+                        <label for="apuesta3">15 puntos</label>
                     </fieldset>
                 </section>
-
-                <section><!--Sección para el jugador 2-->
+                <section><!--Sección para el jugador 1-->
                     <article>
-                        <p>Shin</p>
-                        <ul id="ulJugadorDos">
-                            <!--ul para mostrar las cartas repartidas j1-->
+                        <ul id="ulJugadorUno">
+                            
+                        <!--ul para mostrar las cartas repartidas j1-->
                         </ul>
+                        <div class="jugadorYPuntaje">
+                            <div>
+                                <p id="nombreJugadorUno"></p>
+                                <img id="perfilRen" src="imagenes/avatar-ren.jpg" alt="Ren Honjo">
+                                <img id="perfilNana" src="imagenes/avatar-nana.jpg" alt="Nana Osaki">
+                            </div>
+                            <div>
+                                <p class="textoPuntos">Puntos:</p>
+                                <p class="puntos"></p>
+                            </div>
+                            
+                        </div>
                     </article>
-                    
                 </section>
             </div>
 
             <section><!--section solo contiene las imágenes para mostar-->
                 <article id="repositorioCartas">
-                    <img id="carta-0" src="imagenes/carta0.png" alt="Carta al revés">
+                    <img class="carta-0" src="imagenes/carta0.png" alt="Carta al revés">
                     <img class="imgCarta" src="imagenes/carta1.png" alt="1 de Oro">
                     <img class="imgCarta" src="imagenes/carta2.png" alt="2 de Oro">
                     <img class="imgCarta" src="imagenes/carta3.png" alt="3 de Oro">
@@ -146,8 +175,7 @@
                 </article>
             </section>
         </div>
-        
-        </div>
+
         <footer>
             <img id="nanaLogo" src="imagenes/Nana_anime_logo.png" alt="Logo de NANA">
             <p>Desarrollado por Luciana Niemchikof para la materia Informática General en la facultad de Artes Multimediales de la Universidad Nacional de las Artes.<br> Para consultas o sugerencias contactarse a <a href="mailto:luniemch@hotmail.com">luniemch@hotmail.com</a></p>
