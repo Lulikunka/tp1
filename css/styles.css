@@ -93,13 +93,13 @@ footer a:active{
     padding: 1em;
 
 }
-h1,h2,h3,h4{
+h1,h2,h3,h4,legend{
     font-family: "Acme", sans-serif;
     font-weight: 400;
     font-style: normal;
     text-align: center;
 }
-h3,h4{
+h3,h4, legend{
     font-size: 2em;
 }
 .titulitoIndex{
@@ -209,7 +209,6 @@ p{
 /*Específico de la página de cartas
 El ul y el li, ulJugadorUno y ulJugadorDos, lo comparte con el nav, más arriba*/
 #repositorioCartas{
-    width:10%;
     display: none;
 }
 
@@ -227,11 +226,14 @@ span{
    flex-direction: column;
    justify-content: center;
 }
-#imgCartas,#imgGenerala{
-    width: 70%;
+.imgCarta,#carta-0{
+    width: 80%;
+}
+#imgCaratulaCartas,#imgGenerala{
+    width: 80%;
     align-self: center;
 }
-.comenzarJuego,.botonComenzarPartida,.dadosButton{
+.comenzarJuego,.botonComenzarPartida,.dadosButton, #submitAvatar{
     padding: .5em 1em;
     background-color:#024b6dd8;
     color: white;
@@ -242,6 +244,10 @@ span{
   	-moz-border-radius: 25;
  	border-radius: 25px;
 }
+#submitAvatar{
+    width: 20%;
+    margin: 1em;
+}
 .comenzarJuego{
     font-size: 1.3em;
 }
@@ -249,23 +255,45 @@ span{
     display: flex;
     flex-direction: column;
 }
-.divJuegoDeCartas, #registrarseCartasAvatar{
+
+.divJuegoDeCartas, #registrarseCartasAvatar,#apuesta,#registrarseCartasNombre{
     display: none;
     visibility: hidden;
 }
 .avatar{
     display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.avatar div{
-    display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+.avatar fieldset{
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
 }
+.avatar fieldset legend{
+    text-align: center;
+}
+.avatar fieldset label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 0;
+}
+input{
+	display: none;
+}
 .imgAvatar{
-    width: 40%;
-    padding: 1em;
+    width: 50%;
+    padding: .1em;
+    margin: .2em;
+}
+
+#perfilRen,#perfilNana,#perfilShin{
+    width: 20%;
+}
+.jugadorYPuntaje{
+    display: flex;
+    flex-direction: row;
 }
 
 /*Específico de la página de Generala*/
