@@ -256,7 +256,7 @@ span{
     flex-direction: column;
 }
 
-.divJuegoDeCartas, #registrarseCartasAvatar,#apuesta,#registrarseCartasNombre{
+.divJuegoDeCartas, #registrarseCartasAvatar,#sectionApuesta,#registrarseCartasNombre{
     display: none;
     visibility: hidden;
 }
