@@ -2,14 +2,14 @@
 let jugadores=[];
 let perfilJugador={};
 
-// declaro las variables para indicar el palo y el número
+// Declaro las variables para indicar el palo y el número
 const palos=["oro","copa","basto","espada"]
 const numeros=[1,2,3,4,5,6,7,10,11,12];
 
 //Creo el array del mazo y el objeto de la carta, que irá en el array
 let mazo=[];
 let carta={};
-let imgCarta= document.querySelectorAll('.imgCarta');
+let imgCarta= document.querySelectorAll('.imgCarta');//capturo las imágenes de las cartas
 
 let caratulaCartasH3=document.querySelector('h3');//Capturo el h3 para esconderlo al empezar
 let caratulaCartasImg=document.querySelector('#imgCaratulaCartas');//Capturo la img de la carátula para esconderla al empezar
@@ -23,7 +23,6 @@ let avatarNanaSeleccion=document.querySelector('#nana');//perar con label avatar
 let botonAvatar=document.querySelector('#submitAvatar');//Para aceptar el avatar y nombre
 
 //Inicio perfil de jugador. Capturo las imágenes para mostrar una y esconder la otra, dependiendo del avatar seleccionado.
-let nombre;
 let perfilRen=document.querySelector('#perfilRen');
 let perfilNana=document.querySelector('#perfilNana');
 
@@ -31,15 +30,29 @@ let divDeJuego=document.querySelector('.divJuegoDeCartas');//Capturo el div para
 let divDeAvatar=document.querySelector('#registrarseCartasAvatar');//Capturo el div para que permita seleccionar avatar
 let divCartasNombre=document.querySelector('#registrarseCartasNombre');//Capturo el div para ingresar el nombre
 let nombreJugador=document.querySelector('#nombreJugadorUno');//Capturo el parrafo para que aparezca el nombre del j1
+
 //Declaro ambos jugadores como arrays para asignarle las cartas
 let jugadorUno=[];
 let jugadorDos=[];
 
-let mostrarCartasJugadorUno; //Variable para mostrar los valores asignados
-let mostrarCartasJugadorDos;
+let mostrarCartasJugadorUno; //Variable para mostrar los valores asignados del j1
+let mostrarCartasJugadorDos; //Variable para mostrar los valores asignados del j2
 
-let sectionApuesta=document.querySelector('#sectionApuesta');
+//Variables de la apuesta
+let sectionApuesta=document.querySelector('#sectionApuesta'); //Capturo la sección para habilitarla y deshabilitarla
+let botonApuesta=document.querySelector('#submitApuesta'); //Capturo el botón para elegir apuesta
+let puntosCinco=document.querySelector('#apuesta1');  //Capturo los valores del radio
+let puntosDiez=document.querySelector('#apuesta2');//Capturo los valores del radio
+let puntosQuince=document.querySelector('#apuesta3');//Capturo los valores del radio
+let radioCompleto=document.getElementsByName('apuesta');//Capturo todos los valores del radio para limpiarlos
 
+//Variables para los valores de cartas
+let valorDeCartaSeleccionadaJugadorUno=[];
+//let valorDeCartaSeleccionadaJugadorDos=[];
+
+//Variables para contabilización de puntos
+let valoresDeApuestaJugadorUno=[];
+//let valoresDeApuestaJugadorDos=[];
 
 let comenzarPartidaButton=document.querySelector('.botonComenzarPartida'); //Capturo al botón para comenzar la partida y qse repartan las cartas
 
@@ -106,13 +119,15 @@ botonAvatar.addEventListener('click', e=> {//Creo el evento para el botón de se
 // Función para elegir el avatar, generar el hover y el if para la selección
 let ingrasarNombre=()=>{
     let nombrePersona = document.querySelector('#nombre').value;
+    
+    perfilJugador.nombre=nombrePersona;
+    nombreJugador.innerHTML=nombrePersona
+
     // Valido que el nombre no esté vacío
     if (nombrePersona == '') {
         alert('El nombre no puede estar vacío');
         return false;
     }
-    perfilJugador.nombre=nombrePersona;
-    nombreJugador.innerHTML=nombrePersona
 }
 let elegirAvatar = () => {
     if(avatarRenSeleccion.checked == true){
@@ -133,7 +148,7 @@ let elegirAvatar = () => {
         perfilJugador.avatar= avatarNana;//agrego la imagen al objeto del PERFIL DEL JUGADOR para mostrarloluego en la tabla
     } else{
         alert('Tiene que elegir un avatar');
-        return false;
+        return;
     }
     
 }
@@ -143,7 +158,7 @@ let crearMazo = () => {//Función para crear mazo uniendo numeros, palos y valor
         for (let j = 0; j < numeros.length; j++) {
             let puntos = numeros[j] <= 7 ? numeros[j] : 10;  // Calcular los puntos
 
-            let carta = {  // Crear la carta dentro del bucle
+                carta = {  // Crear la carta dentro del bucle
                 numero: numeros[j],
                 palo: palos[i],
                 valor: puntos
@@ -193,7 +208,7 @@ let comenzarJuego=()=>{
     mostrarCartasJugadorDos=document.querySelector('#ulJugadorDos');
     mostrarCartasJugadorDos.innerHTML = ''; // Limpia la lista antes de agregar las nuevas cartas, PERO HAY QUE PONERLO EN OTRO LADO PORQUE MARCA NaN
 
-    for (let i = 0; i < jugadorDos.length; i++) { //recorro el nuevp array del jugador para mostrar sus cartas
+    for (let i = 0; i < jugadorDos.length; i++) { //recorro el nuevo array del jugador para mostrar sus cartas
         let carta = jugadorDos[i];
         
         mostrarCartasJugadorDos.innerHTML += `<li><img id="carta-0" src="imagenes/carta0.png" alt="Carta al revés"></li>`;
@@ -212,44 +227,86 @@ let capturarCartas=()=>{//Capturo los elementos para poder crear la interactivid
         for(let i=0; i<jugadorDos.length; i++){
             jugadorDos[i].posicion=capturarCartasJugadorDos[i];//Guardo en cada objeto del array la posición
         }
-    }
-
-
-let interactividadCartas = () => {//Permite seleccionar la carta
-    for(let i=0; i<jugadorUno.length;i++){//Recorro el jugador uno para poder generar la interactividad con cada carta, dependiendo de su posición
-        console.log(jugadorUno[i].posicion);
-        jugadorUno[i].posicion.addEventListener('click', ()=>{//Agrego el evento para ue sea posible
-        jugadorUno[i].posicion.style.border = '.2em solid rgb(221, 202, 33)';
-        jugadorUno[i].posicion.classList.add=('cartaElegida1');//Le agrego una clase para poder manejar luego su visibilidad
-
-        let cartaElegida=document.querySelector('#cartaElegida1');
-        cartaElegida.style.display='none';
-        apuesta()
-        })
-    }
-}
-
-let apuesta=()=>{
-    sectionApuesta.style.display='block';
-    sectionApuesta.style.visibility='visible';
-}
-
-let partidacompleta=()=>{
     
+    //Acá debería poder capturar las cartas del jugador 2
+   //     for(let i=0; i<jugadorDos.length; i++){
+   //         jugadorUno[i].posicion=capturarCartasJugadorDos[i];//Guardo en cada objeto del array la posición
+   //     }
+   //     for(let i=0; i<jugadorDos.length; i++){
+   //         jugadorDos[i].posicion=capturarCartasJugadorDos[i];//Guardo en cada objeto del array la posición
+   //     }
 }
-//Comienza el juego:: función de interactividad con las cartas
 
 
+let interactividadCartas = () => {
+    for (let i = 0; i < jugadorUno.length; i++) {
+        jugadorUno[i].posicion.addEventListener('click', () => {
+            
+            jugadorUno[i].posicion.style.border = '.2em solid rgb(221, 202, 33)';
+            jugadorUno[i].posicion.classList.add('cartaElegida1');
+    
+            // Habilito la sección de apuestas.
+            habilitarApuesta();
+    
+            // Guardar la carta elegida.
+            let cartaElegida = jugadorUno[i].posicion;
+    
+                // Listener de apuestas.
+            botonApuesta.addEventListener('click', e => {
+                e.preventDefault(); // Evita que la página se recargue.
+    
+                // Guardo los valores de la apuesta en el array para controlar luego los calculos.
+                //Prevengo que no se seleccione nada
+                if(puntosCinco.checked==true){
+                   valoresDeApuestaJugadorUno.push(puntosCinco.value);
+                } else if(puntosDiez.checked==true){
+                    valoresDeApuestaJugadorUno.push(puntosDiez.value);
+                } else if(puntosQuince.checked==true){
+                    valoresDeApuestaJugadorUno.push(puntosQuince.value);
+                }else{
+                    alert('Tiene que elegir los puntos a apostar');
+                    return; // Si no eligió puntos, no se hace nada más.
+                }
+    
+                // Si se seleccionan los puntos, oculto la carta.
+                cartaElegida.style.display = 'none';
 
+                valorDeCartaSeleccionadaJugadorUno.push(jugadorUno[i].valor);
+                // Remuevo la carta del array de jugadorUno.
+                jugadorUno.splice(i, 1);
+                vaciarRadio();
+            });
+        });
+    }
+}
+    
+// Función para mostrar la sección de apuesta.
+let habilitarApuesta = () => {
+    sectionApuesta.style.display = 'block';
+    sectionApuesta.style.visibility = 'visible';
+}
+    
+    //función apuesta.
+let apuesta = () => {
+    if (!puntosCinco.checked && !puntosDiez.checked && !puntosQuince.checked) {
+        alert('Tiene que elegir los puntos a apostar');
+        return false;
+    } else {
+        // Lógica para manejar los puntos apostados.
+        let puntos = puntosCinco.checked ? 5 : puntosDiez.checked ? 10 : 15;
+        console.log(`Se apostaron ${puntos} puntos`);
+        return true;
+    }
+}
 
-// Llamar a la función para habilitar la interactividadinteractividadCartas();
-//Siguientes pasos: 
-// A: Hay que hacer un evento con las cartas del jugador 1, que es quien está interactuando. 
-//B: Hay que setear un timer para el jugador 2 y que, de manera random, seleccione una carta y la muestre
-//Funcionamiento de la ronda
+let vaciarRadio=()=>{
+    for(let i=0; i<radioCompleto.length;i++){
+        radioCompleto[i].checked=false
+    }
+}
 
-//Apuestas--> ventana que surge con tres opciones para que el usuario marque cuánto apostar
+//Operaciones del localStorage
+jugadores.push(perfilJugador);
 
-//Registrar puntos y verificar ganador
-
-//Lógica del juego
+let jugadoresString=JSON.stringify(jugadores);
+localStorage.setItem('jugadoresStorage',jugadoresString);

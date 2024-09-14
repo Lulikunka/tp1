@@ -93,13 +93,13 @@ footer a:active{
     padding: 1em;
 
 }
-h1,h2,h3,h4,legend{
+h1,h2,h3,h4,h5,h6,legend{
     font-family: "Acme", sans-serif;
     font-weight: 400;
     font-style: normal;
     text-align: center;
 }
-h3,h4, legend{
+h3,h4,h5,h6,legend{
     font-size: 2em;
 }
 .titulitoIndex{
@@ -213,10 +213,10 @@ El ul y el li, ulJugadorUno y ulJugadorDos, lo comparte con el nav, más arriba*
 }
 
 span{
-    color:#d11382;
+    color:#64b1d4d8;
+    font-size: 1.3em;
 }
-#instruccionesCartas,#instruccionesGenerala{
-    border: .2em solid #024b6dd8;
+#instrucciones,#instruccionesGenerala{
     padding: 1.5em;
     margin: 0.5em;
     -webkit-border-radius: 10;
@@ -226,6 +226,10 @@ span{
    flex-direction: column;
    justify-content: center;
 }
+
+#instruccionesCartas{
+    border: .2em solid #024b6dd8;
+}
 #ulJugadorUno ul li img,.carta-0{
     width: 80%;
 }
@@ -233,9 +237,8 @@ span{
     width: 80%;
     align-self: center;
 }
-.comenzarJuego,.botonComenzarPartida,.dadosButton, #submitAvatar{
+.comenzarJuego,.botonComenzarPartida,#submitAvatar,.dadosButton,.tirarDadosButton{
     padding: .5em 1em;
-    background-color:#024b6dd8;
     color: white;
     border: none;
     border-radius: .1em;
@@ -244,6 +247,9 @@ span{
   	-moz-border-radius: 25;
  	border-radius: 25px;
 }
+.comenzarJuego,.botonComenzarPartida,#submitAvatar{
+    background-color:#024b6dd8;
+}
 #submitAvatar{
     width: 20%;
     margin: 1em;
@@ -251,11 +257,13 @@ span{
 .comenzarJuego{
     font-size: 1.3em;
 }
-#instrucciones{
+#instruccionesCartas, #instruccionesDados{
     display: flex;
     flex-direction: column;
 }
-
+#instruccionesCartas h4{
+    color: #024b6dd8;
+}
 .divJuegoDeCartas, #registrarseCartasAvatar,#sectionApuesta,#registrarseCartasNombre{
     display: none;
     visibility: hidden;
@@ -295,6 +303,9 @@ span{
 }
 
 /*Específico de la página de Generala*/
+#instruccionesGenerala{
+    border: .2em solid #63a725;
+}
 #instuccionesGenerala h2{
     text-align: center;
 }
@@ -303,6 +314,13 @@ span{
     margin: 0;
     padding: 0;
     list-style-type:circle;
+}
+#instruccionesDados h4{
+    color: #63a725;
+}
+#puntos{
+    color: #70bb2b;
+    font-size: 1.3em;
 }
 .jugadores{
     display: flex;
@@ -314,17 +332,35 @@ span{
     flex-direction: column;
     justify-content: center;
 }
-      
+
+.dadosButton{
+    background-color: #63a725;
+}      
 .dadosButton:hover {
-    background-color: #045d86d8;
+    background-color: #3b6315;
 }
       
 .dadosButton:active{
-    background-color: #066fa0d8;
+    background-color: #9cf14c;
+}
+.imgDados{
+    width: 10%;
 }
 
-
-      
+/*Específico de tabla de posiciones*/
+.tablaDePosiciones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#tablaCartas{
+    background-color:#024b6dd8;
+    margin: .5em;
+}
+#tablaDados{
+    background-color: #63a725;
+    margin: .5em;
+}
 
 @media (min-width:480px){
     body{
@@ -397,7 +433,7 @@ span{
         width: 70%;
     }
     #instruccionesGenerala{
-        border: .3em solid #024b6dd8;
+        border: .3em solid #63a725;;
         padding: 2em;
         margin: 1em;
     }
