@@ -208,15 +208,15 @@ p{
 
 /*Específico de la página de cartas
 El ul y el li, ulJugadorUno y ulJugadorDos, lo comparte con el nav, más arriba*/
-#repositorioCartas{
+#repositorioCartas, #repositorioDados{
     display: none;
 }
 
-span{
+li span{
     color:#64b1d4d8;
     font-size: 1.3em;
 }
-#instrucciones,#instruccionesGenerala{
+#instruccionesCartas,#instruccionesGenerala,#sectionPreguntas,#resultados,#instruccionesTrivia,#informaciónProyecto{
     padding: 1.5em;
     margin: 0.5em;
     -webkit-border-radius: 10;
@@ -233,11 +233,11 @@ span{
 #ulJugadorUno ul li img,.carta-0{
     width: 80%;
 }
-#imgCaratulaCartas,#imgGenerala{
-    width: 80%;
+#imgCaratulaCartas,#imgGenerala,#imgCaratulaTrivia{
+    width: 75%;
     align-self: center;
 }
-.comenzarJuego,.botonComenzarPartida,#submitAvatar,.dadosButton,.tirarDadosButton{
+.comenzarJuego,.botonComenzarPartida,#submitAvatar,.dadosButton,.tirarDadosButton,#contestarPreguntas,#submitPregunta{
     padding: .5em 1em;
     color: white;
     border: none;
@@ -257,12 +257,12 @@ span{
 .comenzarJuego{
     font-size: 1.3em;
 }
-#instruccionesCartas, #instruccionesDados{
+#instruccionesCartas, #instruccionesDados, #instruccionesTrivia{
     display: flex;
     flex-direction: column;
 }
 #instruccionesCartas h4{
-    color: #024b6dd8;
+    color: #64b1d4d8;
 }
 .divJuegoDeCartas, #registrarseCartasAvatar,#sectionApuesta,#registrarseCartasNombre{
     display: none;
@@ -361,6 +361,98 @@ span{
     background-color: #63a725;
     margin: .5em;
 }
+#tablaTrivia{
+    background-color: #aaa822;
+    margin: .5em;
+}
+
+/*Específico pagina de preguntas*/
+#sectionPreguntas,#resultados{
+    border: .2em solid #aaa822;
+}
+#sectionPreguntas fieldset{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+#imgAsano{
+    width: 50%;
+}
+#triviaNana fieldset, #resultados{
+    display: none;
+}
+
+#resultados h4{
+    color: #c7c42a;
+}
+#instrucciones span{
+    color: #c7c42a;
+    font-size: 1.3em;
+}
+#comentario{
+    display: flex;
+    flex-direction: column;
+}
+.comentarioimg{
+    width: 40%;
+}
+#contestarPreguntas,#submitPregunta{
+    background-color: #c7c42a;
+}
+#submitPregunta{
+    display: none;
+    margin: .5em;
+}
+#contestarPreguntas:hover {
+    background-color: #929007;
+}
+      
+#contestarPreguntas:active{
+    background-color: #69693b;
+}
+#submitPregunta:hover {
+    background-color: #929007;
+}
+      
+#submitPregunta:active{
+    background-color: #69693b;
+}
+.imgDados{
+    width: 10%;
+}
+/*Específico de página de créditos*/
+#informacionProyecto{
+    border: .2em solid #d11382;
+}
+iframe{
+    width: 50%;
+}
+#informacionProyecto article img{
+    display: block;
+    width: 30%;
+    margin: .2em;
+    padding: .3em;
+}
+.link:link{
+    background-color: #d11382;
+    color: aliceblue;
+    text-decoration: none;
+}
+.link:visited{
+    background-color: #d11382;
+    color: aliceblue;
+    text-decoration: none;
+}
+.link:hover{
+    background-color: rgb(82, 31, 109);
+    color: aliceblue;
+    text-decoration: none;
+}
+.link:active{
+    background-color: rgb(221, 202, 33);
+    color: aliceblue;
+    text-decoration: none;
+}
 
 @media (min-width:480px){
     body{
@@ -429,6 +521,11 @@ span{
         float: inline-start;
         width: 9%;
     }
+    #instruccionesCartas{
+        border: .3em solid #024b6dd8;
+        padding: 2em;
+        margin: 1em;
+    }
     .imgCarta,.carta-0{
         width: 70%;
     }
@@ -436,6 +533,31 @@ span{
         border: .3em solid #63a725;;
         padding: 2em;
         margin: 1em;
+    }
+    #sectionPreguntas, #resultados,#instruccionesTrivia{
+        border: .3em solid #aaa822;
+        padding: 2em;
+        margin: 1em;
+        padding: 2em;
+    }
+    #informacionProyecto{
+        border: .3em solid #d11382;
+        padding: 2em;
+        margin: 1em;
+        padding: 2em
+    }
+    #informacionProyecto article img{
+        display: inline;
+        
+    }
+    #blackStones{
+        float: inline-end;
+    }
+    #cartasAdmin{
+        float: inline-start;
+    }
+    #happyBlast{
+        float: inline-end;
     }
     
 }

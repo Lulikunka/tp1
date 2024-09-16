@@ -156,23 +156,23 @@ let elegirAvatar = () => {
 let crearMazo = () => {//Función para crear mazo uniendo numeros, palos y valores
     for (let i = 0; i < palos.length; i++) {
         for (let j = 0; j < numeros.length; j++) {
-            let puntos = numeros[j] <= 7 ? numeros[j] : 10;  // Calcular los puntos
+            let puntos = numeros[j] <= 7 ? numeros[j] : 10;  // Calculo los puntos
 
-                carta = {  // Crear la carta dentro del bucle
+                carta = {  // Creo la carta dentro del bucle
                 numero: numeros[j],
                 palo: palos[i],
                 valor: puntos
             };
 
-            mazo.push(carta);  // Agregar la carta al mazo
+            mazo.push(carta);  // Agrego la carta al mazo
         }
     }
 }
 
 let insertarCarta = () => {//Función para insertar la imagen para cada carta
     for (let i = 0; i < mazo.length; i++) {
-        if (imgCarta[i]) { // Asegurarse de que haya una imagen para asignar
-            mazo[i].imagen = imgCarta[i].src; // Asignar la fuente de la imagen a la carta
+        if (imgCarta[i]) { 
+            mazo[i].imagen = imgCarta[i].src; // Asigno la fuente de la imagen a la carta
         }
     }
 };

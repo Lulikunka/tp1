@@ -1,27 +1,65 @@
-//Acá van las imágenes de los dados para c/cara de los dados
-//También van las imágenes al final para mostrar si el jugador 1 ha ganado o perdido
-//Para mostrar las imágenes puedo usar una función, porque tambíen la utilizo en los otros programas
+let caras = document.querySelectorAll('.imgDados');
+let tirarDadosButton = document.querySelector('#tirarDadosButton');
+let contabilizarCaras = [];
+let contador = [
+    { veces: 0 }, // Cara 1
+    { veces: 0 }, // Cara 2
+    { veces: 0 }, // Cara 3
+    { veces: 0 }, // Cara 4
+    { veces: 0 }, // Cara 5
+    { veces: 0 }  // Cara 6
+];
+let jugador = [];
+let mostrarDados = document.querySelector('#mostrarDados');
 
-const numeros=[1,2,3,4,5,6,7,10,11,12];
-let jugadorUno=[];
-let jugadorDos=[];
-
-//Preguntar nombre del jugador
-
-//Crear mazo uniendo numeros, palos y valores
-
-//Esta resolución permite repartir 3 números de este array. Cada vez que toque se reparten los números y se elimina el que haya salido.
-//IMPORTANTE: UNA VEZ QUE LOS NÚMEROS HAYAN SALIDO TODOS, EMPIEZA A INDICAR "UNDEFINED"
-//ES DECIR, QUE FUNCIONA COMO UN MAZO DE CARTAS DE UNA PARTIDA. Ningún número se va a repetir.
-
-let dadosButton=document.querySelector('.dadosButton'); //Capturo al botón para que reparta
-
-dadosButton.addEventListener('click', function() {
-    jugadorUno=[];
-    for(let i = 0; i < 3; i++){
-        let azar = Math.floor(Math.random() * numeros.length);
-        jugadorUno.push(numeros[azar]);
-        numeros.splice(azar,1);
-    }
-    console.log(jugadorUno)
+tirarDadosButton.addEventListener('click', e => {
+    e.preventDefault();
+    
+    tirarDados();
+    contabilizarPuntos();
 });
+
+let tirarDados = () => {
+    mostrarDados.innerHTML = ''; // Limpiar los dados mostrados
+    contabilizarCaras = []; // Vaciar el array de caras antes de tirar nuevamente
+
+    for (let i = 0; i < 5; i++) {
+        // Elegir una cara aleatoria entre 0 y 5
+        let azar = Math.floor(Math.random() * 6);
+
+        // Selecciona la imagen de la cara correspondiente
+        let caraSeleccionada = caras[azar];
+
+        // Muestra la cara seleccionada
+        mostrarDados.innerHTML += `<img class="imgDados" src="${caraSeleccionada.src}" alt="Cara del dado">`;
+
+        // Guarda el número de la cara seleccionada
+        contabilizarCaras.push(azar);
+    }
+};
+
+let contabilizarPuntos = () => {
+    // Reiniciar los contadores
+    for (let i = 0; i < contador.length; i++) {
+        contador[i].veces = 0; // Reinicia el conteo de cada cara
+    }
+
+    // Contar cuántas veces aparece cada cara
+    for (let i = 0; i < contabilizarCaras.length; i++) {
+        let cara = contabilizarCaras[i]; 
+        contador[cara].veces++; // Aumento el contador de la cara correspondiente
+    }
+
+    // Calcular puntos
+    for (let i = 0; i < contador.length; i++) {
+        if (contador[i].veces === 3) {
+            jugador.push(3); // Añadir 3 puntos si una cara se repite 3 veces
+        } else if (contador[i].veces === 4) {
+            jugador.push(4); // Añadir 4 puntos si una cara se repite 4 veces
+        } else if (contador[i].veces === 5) {
+            jugador.push(5); // Añadir 5 puntos si una cara se repite 5 veces
+        }
+    }
+
+    console.log('Puntos del jugador:', jugador);
+};
