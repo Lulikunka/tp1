@@ -2,41 +2,69 @@
 <html lang="es">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Generala con Trapnest</title>
-        <link href="css/styles.css" rel="stylesheet">
+    <title>Nena NANA: Dados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
     </head>
     <body>
         <div id="contenedor">
             <header>
-                <h1>Bienvenidxs a NANA Trivia!</h1>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="cartas.html">Juego de Cartas</a></li>
-                        <li><a href="dados.html">Generala</a></li>
-                        <li><a href="preguntas.html">Trivia</a></li>
-                    </ul>
-                </nav>
+                    <h1>Broken Rose: Nena-NANA</h1>
+                    <h2>Punky blog</h2>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="cartas.html">Cartas</a></li>
+                            <li><a href="dados.html">Generala</a></li>
+                            <li><a href="preguntas.html">Trivia</a></li>
+                            <li><a href="posiciones.html">Posiciones</a></li>
+                            <li><a href="creditos.html">Nosotros</a></li>
+                        </ul>
+                    </nav>
             </header>
             <section id="instruccionesGenerala">
-                <h2>Jugando a la Generala</h2>
+                <h3>Jugando a la generala con Trapnest</h3>
                 <img id="imgGenerala" src=".//imagenes/caratula-dados.jpg" alt="Poster de Trapnest">
-                <div id="instrucciones">
-                    <h3>Instrucciones:</h3>
+                <div id="instruccionesDados">
+                    <h4>Instrucciones:</h4>
                     <ul>
                         <li>El juego consiste en tirar los 5 dados para lograr obtener lados iguales. La cantidad de lados iguales que se obtengan sumarán una determinada cantidad de puntos</li>
+                        <li><span id="puntos">Si consigue 20 puntos antes de las 10 rondas será el ganador!</span></li>
                         <li>3 lados iguales= 3 puntos</li>
                         <li>4 lados iguales= 6 puntos</li>
                         <li>5 lados iguales= 12 puntos</li>
-                </ul>
+                    </ul>
+                </div>
             </section>
-            <section id="inicioDeJuegoGenerala">
+            <section id="mostrarDados">
 
             </section>
-            <footer>
-
-            </footer>
+            <section id="seccionTirarDados">
+                <button class="dadosButton" id="tirarDadosButton">Tirar dados</button>
+                <div id="mostrarPuntosDados">
+                        <p>Puntos: <span id="puntosJugador">0</span></p>
+                </div>
+                
+            </section>
+                
+            <section id="repositorioDados">
+                <img class="imgDados" src="imagenes/dado1.png" alt="Uno">
+                <img class="imgDados" src="imagenes/dado2.png" alt="Dos">
+                <img class="imgDados" src="imagenes/dado3.png" alt="Tres">
+                <img class="imgDados" src="imagenes/dado4.png" alt="Cuatro">
+                <img class="imgDados" src="imagenes/dado5.png" alt="Cinco">
+                <img class="imgDados" src="imagenes/dado6.png" alt="Seis">
+            </section>
         </div>
-    <script src="/js/funcionamiento-dados.js"></script>
+        <footer>
+            <img id="nanaLogo" src="imagenes/Nana_anime_logo.png" alt="Logo de NANA">
+            <p>Desarrollado por Luciana Niemchikof para la materia Informática General en la facultad de Artes Multimediales de la Universidad Nacional de las Artes.<br> Para consultas o sugerencias contactarse a <a href="mailto:luniemch@hotmail.com">luniemch@hotmail.com</a></p>
+        </footer>
+    <script src="js/funcionamiento-dados.js"></script>
     </body>
 </html>
