@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nena NANA: Preguntas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="contenedor">
+            <header>
+                    <h1>Broken Rose: Nena-NANA</h1>
+                    <h2>Punky blog</h2>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="cartas.html">Cartas</a></li>
+                        <li><a href="dados.html">Generala</a></li>
+                        <li><a href="preguntas.html">Trivia</a></li>
+                        <li><a href="posiciones.html">Posiciones</a></li>
+                        <li><a href="creditos.html">Nosotros</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section id="instruccionesTrivia">
+                <h3>Trivia con Nana K.</h3>
+                <img id="imgCaratulaTrivia" src="imagenes/caratula-preguntas.jpg" alt="Nana Komasu cute">
+                <p>Contestá las preguntas y demostrá cuánto sabes de la serie!</p>
+            </section>
+            <section id="sectionPreguntas">
+                <section>
+                    <button id="contestarPreguntas">Contestar las preguntas</button>
+                </section>
+                <form id="triviaNana" action="#" method="get">
+                    <fieldset id="fieldsetCigarrillos">
+                        <legend>¿Qué cigarrillos fuma Nana Osaki?</legend>
+                        <div>
+                            <input type="radio" name="cigarrillos" id="cigarrillos1" value="no">
+                            <label for="cigarrillos1">Lucky Stike</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="cigarrillos" id="cigarrillos2" value="si">
+                            <label for="cigarrillos2">Seven Stars</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="cigarrillos" id="cigarrillos3" value="no">
+                            <label for="cigarrillos3">Marlboro</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="cigarrillos" id="cigarrillos4" value="no">
+                            <label for="cigarrillos4">Fortuna</label>
+                        </div>                       
+                    </fieldset>
+                    <fieldset id="fieldsetBandaNanaNombre">
+                        <legend>¿Cómo se llama la banda de Nana Osaki?</legend>
+                        <div>
+                            <input type="radio" name="bandaNanaNombre" id="bandaNanaNombre1" value="si">
+                            <label for="bandaNanaNombre1">The Black Stones</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="bandaNanaNombre" id="bandaNanaNombre2" value="no">
+                            <label for="bandaNanaNombre2">Trapnest</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="bandaNanaNombre" id="bandaNanaNombre3" value="no">
+                            <label for="bandaNanaNombre3">Los Enanitos Verdes</label>
+                        </div>
+                    </fieldset>
+                    <fieldset id="fieldsetMejorAmigaNana">
+                        <legend>¿Quién es la mejor amiga de Nana Komasu?</legend>
+                        <div>
+                            <input type="radio" name="mejorAmigaNana" id="mejorAmigaNan1" value="no">
+                            <label for="mejorAmigaNan1">Nana Osaki</label></div>
+                        <div>
+                            <input type="radio" name="mejorAmigaNan" id="mejorAmigaNan2" value="no">
+                            <label for="mejorAmigaNan2">Reira Serizawa</label></div>
+                        <div>
+                            <input type="radio" name="mejorAmigaNan" id="mejorAmigaNan3" value="si">
+                            <label for="mejorAmigaNan3">Junko Saotome</label>
+                        </div>  
+                    </fieldset>
+                    <fieldset id="fieldsetAsanoTakashi">
+                        <legend>¿Quién es este tipo?</legend>
+                        <div>
+                            <img id="imgAsano" src="imagenes/asano-trivia.jpg" alt="Takashi Asano">
+                        </div>
+                        <div>
+                            <div>
+                                <input type="radio" name="asanoTakashi" id="asanoTakashi1" value="si">
+                                <label for="asanoTakashi1">El primer amor de Nana Komasu</label></div>
+                            <div>
+                                <input type="radio" name="asanoTakashi" id="asanoTakashi2" value="no">
+                                <label for="asanoTakashi2">El primo de Shin</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="asanoTakashi" id="asanoTakashi3" value="no">
+                                <label for="asanoTakashi3">El primer productor de Trumpnest</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="asanoTakashi" id="asanoTakashi4" value="no">
+                                <label for="asanoTakashi4">El novio de Reira Serizawa</label>
+                            </div>  
+                        </div>
+                    </fieldset>
+                    <fieldset id="fieldsetEncuentroTren">
+                        <legend>¿Dónde se encuentran por primera vez Nana O. y Nana K.?</legend>
+                        <div>
+                            <input type="radio" name="encuentroTren" id="encuentroTren1" value="no">
+                            <label for="encuentroTren1">En el avión a Okinawa</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="encuentroTren" id="encuentroTren2" value="si">
+                            <label for="encuentroTren2">En el tren a Tokio</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="encuentroTren" id="encuentroTren3" value="no">
+                            <label for="encuentroTren3">En un concierto de los Sex Pistols</label>
+                        </div>
+                    </fieldset>
+                    <fieldset id="fieldsetFanaticaBlast">
+                        <legend>¿Cómo se llama la mayor admiradora de Blast?</legend>
+                        <div>
+                            <input type="radio" name="fanaticaBlast" id="fanaticaBlast1" value="no">
+                            <label for="fanaticaBlast1">Hachiko</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="fanaticaBlast" id="fanaticaBlast2" value="no">
+                            <label for="fanaticaBlast2">Miu Shinoda</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="fanaticaBlast" id="fanaticaBlast3" value="si">
+                            <label for="fanaticaBlast3">Misato Uehara</label>
+                        </div>
+                    </fieldset>
+                    <fieldset id="fieldsetBanda">
+                        <legend>¿Quienes son los integrantes de Trapnest?</legend>
+                        <div>
+                            <input type="radio" name="banda" id="banda1" value="no">
+                            <label for="banda1">Nana, Yasu, Shin y Nobu</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="banda" id="nanda2" value="no">
+                            <label for="nanda2">Ren, Nana, Yasu y Nobu</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="banda" id="banda3" value="si">
+                            <label for="banda3">Reira, Takumi, Naoki, Ren</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="banda" id="banda4" value="no">
+                            <label for="banda4">Naoki, Takumi, Nobu, Reira</label>
+                        </div>
+                    </fieldset>
+                    <fieldset id="fieldsetYasu">
+                        <legend>¿Qué instrumento toca Yasu?</legend>
+                        <div>
+                            <input type="radio" name="yasu" id="yasu1" value="no">
+                            <label for="yasu1">El clarinete</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="yasu" id="yasu2" value="si">
+                            <label for="yasu2">La batería</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="yasu" id="yasu3" value="no">
+                            <label for="yasu3">El bajo</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="yasu" id="yasu4" value="no">
+                            <label for="yasu4">La guitarra</label>
+                        </div>
+                    </fieldset>
+                    <fieldset id="fieldsetMangaka">
+                        <legend>¿Quien creó NANA?</legend>
+                        <div>
+                            <input type="radio" name="mangaka" id="mangaka1" value="no">
+                            <label for="mangaka1">Miko Matsubara</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="mangaka" id="mangaka2" value="no">
+                            <label for="mangaka2">Naoko Takeuchi</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="banda" id="mangaka3" value="no">
+                            <label for="mangaka3">Inio Asano</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="banda" id="mangaka4" value="si">
+                            <label for="mangaka4">Ai Ayasawa</label>
+                        </div>
+                    </fieldset>
+                    <fieldset id="fieldsetCuernos">
+                    <legend>¿Con quién engañó Shoji a Nana K.?</legend>
+                    <div>
+                        <input type="radio" name="cuernos" id="cuernos1" value="si">
+                        <label for="cuernos1">Sachiko</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="cuernos" id="cuernos2" value="no">
+                        <label for="cuernos2">Yuri</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="cuernos" id="cuernos3" value="si">
+                        <label for="cuernos3">Junko</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="cuernos" id="cuernos4" value="no">
+                        <label for="cuernos4">Reira</label>
+                    </div>
+                </fieldset>
+                <fieldset id="fieldsetHiatus">
+                    <legend>¿Desde que año está en hiatus el manga de NANA?</legend>
+                    <div>
+                        <input type="radio" name="hiatus" id="hiatus1" value="si">
+                        <label for="hiatus1">2007</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="hiatus" id="hiatus2" value="no">
+                        <label for="hiatus2">2015</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="hiatus" id="hiatus3" value="si">
+                        <label for="hiatus3">2009</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="hiatus" id="hiatus4" value="no">
+                        <label for="hiatus4">2005</label>
+                    </div>
+                </fieldset>
+                <fieldset id="fieldsetTatuaje">
+                    <legend>¿Que tiene tatuado Nana O. en su hombro?</legend>
+                    <div>
+                        <input type="radio" name="tatuaje" id="tatuaje1" value="no">
+                        <label for="tatuaje1">Un dragón de Komodo</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="tatuaje" id="tatuaje2" value="si">
+                        <label for="tatuaje2">Una flor de Ren</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="tatuaje" id="tatuaje3" value="no">
+                        <label for="tatuaje3">Un loto</label>
+                    </div>
+                </fieldset>
+                <fieldset id="fieldsetRenSoujo">
+                    <legend>¿Quién es Ren Soujo?</legend>
+                    <div>
+                        <input type="radio" name="renSoujo" id="renSoujo1" value="si">
+                        <label for="renSoujo1">El guitarrista de Trapnest</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="renSoujo" id="renSoujo2" value="no">
+                        <label for="renSoujo2">El ex bajista de Blast</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="renSoujo" id="renSoujo3" value="no">
+                        <label for="renSoujo3">El novio de NANA O.</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="renSoujo" id="renSoujo4" value="si">
+                        <label for="renSoujo4">Todas son correctas</label>
+                    </div>
+                </fieldset>
+                <fieldset id="fieldsetHachi">
+                    <legend>¿Por qué a Nana K. le dicen "Hachiko"?</legend>
+                    <div>
+                        <input type="radio" name="hachi" id="hachi1" value="no">
+                        <label for="hachi1">Para no confundir nombres con Nana O.</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="hachi" id="hachi2" value="si">
+                        <label for="hachi2">Por su actitud que recuerda a un perrito</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="hachi" id="hachi3" value="no">
+                        <label for="hachi3">Es un juego de palabras para evitar malos augurios del significado de "nana" en japonés</label>
+                    </div> 
+                </fieldset>
+                <fieldset id="fieldsetCarreraYasu">
+                    <legend>¿Que carrera estudia Yasu?</legend>
+                    <div>
+                        <input type="radio" name="carreraYasu" id="carreraYasu1" value="si">
+                        <label for="carreraYasu1">Abogacía</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="carreraYasu" id="carreraYasu2" value="no">
+                        <label for="carreraYasu2">Medicina</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="carreraYasu" id="carreraYasu3" value="no">
+                        <label for="carreraYasu3">Contaduría</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="carreraYasu" id="carreraYasu4" value="no">
+                        <label for="carreraYasu4">Gestión cultural</label>
+                    </div>
+                </fieldset>
+                </form>
+                <section>
+                    <button type="submit" id="submitPregunta">Aceptar</button>
+                </section>
+                
+            </section>
+            <section id="resultados">
+                <h4>Resultados:</h4>
+                <p id="mostrarMensaje"></p>
+                <p id="comentario"></p>
+            </section>
+        </div>
+        <footer>
+            <img id="nanaLogo" src="imagenes/Nana_anime_logo.png" alt="Logo de NANA">
+            <p>Desarrollado por Luciana Niemchikof para la materia Informática General en la facultad de Artes Multimediales de la Universidad Nacional de las Artes.<br> Para consultas o sugerencias contactarse a <a href="mailto:luniemch@hotmail.com">luniemch@hotmail.com</a></p>
+        </footer>
+        <script src="js/funcionamiento-preguntas.js"></script>
+    </body>
+</html>
