@@ -1,10 +1,10 @@
 let caras = document.querySelectorAll('.imgDados'); // Capturo las imágenes de las caras para mostrarlas
 let habilitarSectionPuntos=document.querySelector('#mostrarPuntosDados'); //Capturo el section para mostrar los puntos
 let mostrarPuntaje=document.querySelector('#puntosJugador'); //Capturo el div para mostrar el contador de puntos
-let tirarDadosButton = document.querySelector('#tirarDadosButton');//Capturo el bot{on para tirar los dados}
 
+let tirarDadosButton = document.querySelector('#tirarDadosButton');
 let contabilizarCaras = []; // Armo el array para contar cuántas veces salió X cara
-let contador = [ //Armo el array con el valor de las caras y cuántas veces salió cada una. Valor inicial de 0
+let contador = [
     { valor: 1, veces: 0 }, // Cara 1
     { valor: 2, veces: 0 }, // Cara 2
     { valor: 3, veces: 0 }, // Cara 3
@@ -21,7 +21,7 @@ let mostrarDados = document.querySelector('#mostrarDados'); // Capturo el conten
 jugadoresTotales=[];
 
 
-let nombreJugador; // Variable para almacenar el nombre del jugador
+let nombreJugador = ''; // Variable global para almacenar el nombre del jugador
 
 // Preguntar el nombre del jugador al inicio de la partida
 let solicitarNombreJugador = () => {
@@ -34,25 +34,25 @@ let solicitarNombreJugador = () => {
 
 };
 
-// Llamo a la función del nombre al principio para que lo pregunte sólo una vez al abrir la página
+// Llamar a la función para preguntar el nombre solo una vez al inicio
 solicitarNombreJugador();
 
 tirarDadosButton.addEventListener('click', e => {
     e.preventDefault();
 
-    if (tiradas < maxTiradas && jugador < 20) { //Establezco el momento que se debe terminar la partida: meximo de rondas o puntaje alcanzados
-        tirarDados(); // Llamo a tirarDados
-        contabilizarPuntos(); // Cuenta los puntos
-        encontrarCaraMasRepetida(); // Encuentra la cara más repetida
-        tiradas++; // Incrementa el contador de tiradas
+    if (tiradas < maxTiradas && jugador < 20) { 
+        tirarDados(); // Llamar a tirarDados
+        contabilizarPuntos(); // Contar los puntos
+        encontrarCaraMasRepetida(); // Encontrar la cara más repetida
+        tiradas++; // Incrementar el contador de tiradas
 
-        // Deshabilita el botón si se alcanzan las tiradas o los puntos
+        // Deshabilitar el botón si se alcanzan las tiradas o los puntos
         if (tiradas >= maxTiradas || jugador >= 20) {
-            tirarDadosButton.disabled = true; // Deshabilita el botón
+            tirarDadosButton.disabled = true; // Deshabilitar el botón
             if (jugador < 20) {
-                alert('¡Qué mala suerte! No ha alcanzado los suficientes puntos.'); //Si no se llega a los 20 puntos, muestra un mensaje de pésame
+                alert('¡Qué mala suerte! No ha alcanzado los suficientes puntos.');
             } else {
-                alert(`¡Vaya qué suertudo! Ha alcanzado sus 20 puntos en ${tiradas} tiradas.`);//Si se llega a los 20 puntos, muestra un mensaje de felicitación
+                alert(`¡Vaya qué suertudo! Ha alcanzado sus 20 puntos en ${tiradas} tiradas.`);
             }
             reiniciarJuego();
         }
@@ -61,36 +61,36 @@ tirarDadosButton.addEventListener('click', e => {
 
 
 let tirarDados = () => {
-    mostrarDados.innerHTML = ''; // Limpio los dados mostrados
-    contabilizarCaras = []; // Vacío el array de caras antes de tirar nuevamente
+    mostrarDados.innerHTML = ''; // Limpiar los dados mostrados
+    contabilizarCaras = []; // Vaciar el array de caras antes de tirar nuevamente
 
     for (let i = 0; i < 5; i++) {
-        // Elege una cara aleatoria entre 0 y 5
+        // Elegir una cara aleatoria entre 0 y 5
         let azar = Math.floor(Math.random() * 6);
 
-        // Selecciona la imagen de la cara correspondiente
+        // Seleccionar la imagen de la cara correspondiente
         let caraSeleccionada = caras[azar];
 
-        // Muestra la cara seleccionada
+        // Mostrar la cara seleccionada
         mostrarDados.innerHTML += `<img class="imgDados" src="${caraSeleccionada.src}" alt="Cara del dado">`;
-        //Muestra el Section de puntaje
+        //Mostrar el Section de puntaje
         habilitarSectionPuntos.style.display='flex';
         habilitarSectionPuntos.style.flexDirectio='row';
 
-        // Guarda el número de la cara seleccionada
-        contabilizarCaras.push(azar); 
+        // Guardar el número de la cara seleccionada
+        contabilizarCaras.push(azar); // Recordar que azar va de 0 a 5
     }
 };
 
 let contabilizarPuntos = () => {
-    // Reinicia las veces de cada contador a 0 antes de contar de nuevo
+    // Reiniciar las veces de cada contador a 0 antes de contar de nuevo
     for (let i = 0; i < contador.length; i++) {
         contador[i].veces = 0;
     }
 
-    // Contabiliza cuántas veces sale cada cara
+    // Contabilizar cuántas veces sale cada cara
     for (let i = 0; i < contabilizarCaras.length; i++) {
-        let cara = contabilizarCaras[i]; 
+        let cara = contabilizarCaras[i]; // Cara va de 0 a 5
         contador[cara].veces += 1; // Aumenta el contador de la cara seleccionada
     }
 };
@@ -102,25 +102,25 @@ let encontrarCaraMasRepetida = () => { //Hago la función para que contabilice l
     // Recorro el contador y busco la cara con más repeticiones
     for (let i = 0; i < contador.length; i++) {
         if (contador[i].veces > maxVeces) {
-            maxVeces = contador[i].veces; // Actualiza el valor máximo
-            caraMasRepetida = contador[i].valor; // Guarda la cara más repetida
+            maxVeces = contador[i].veces; // Actualizar el valor máximo
+            caraMasRepetida = contador[i].valor; // Guardar la cara más repetida
         }
     }
 
     if (caraMasRepetida !== null) {
         if (maxVeces === 3) {
-            jugador += 3; // Suma 3 puntos si la cara se repite 3 veces
+            jugador += 3; // Sumar 3 puntos si la cara se repite 3 veces
         } else if (maxVeces === 4) {
-            jugador += 6; // Suma 6 puntos si la cara se repite 4 veces
+            jugador += 6; // Sumar 6 puntos si la cara se repite 4 veces
         } else if (maxVeces === 5) {
-            jugador += 12; // Suma 12 puntos si la cara se repite 5 veces
+            jugador += 12; // Sumar 12 puntos si la cara se repite 5 veces
         }
     }
 
-    mostrarPuntaje.innerHTML= jugador; // Mostrar los puntos en el casillero de puntos
+    mostrarPuntaje.innerHTML= jugador; // Mostrar los puntos en la consola
 };
 
-let reiniciarJuego = () => { //Función que, al terminar, decide elegir si recargar la página para volver a jugar o redirige a la tabla de posiciones
+let reiniciarJuego = () => {
     confirm("¿Desea reiniciar el juego?");
     if(confirm()===true){
         location.href='./dados.html';
@@ -131,7 +131,7 @@ let reiniciarJuego = () => { //Función que, al terminar, decide elegir si recar
 };
 
 
-let perfilJugadorDados={ //Armo el perfil del jugador para guardarlo en el localStorage
+let perfilJugadorDados={
     nombre: nombreJugador,
     puntos: jugador,
     tirada: tiradas

@@ -56,7 +56,7 @@ let valoresDeApuestaJugadorUno=[];
 
 let comenzarPartidaButton=document.querySelector('.botonComenzarPartida'); //Capturo al botón para comenzar la partida y qse repartan las cartas
 
-inicio.addEventListener('click', ()=>{ //Habilito y deshabilito los casilleros de cartas y botones para el juego
+inicio.addEventListener('click', ()=>{
     caratulaCartasH3.style.display = 'none';
     caratulaCartasH3.style.visibility = 'hidden';
     caratulaCartasImg.style.display = 'none';
@@ -130,7 +130,7 @@ let ingrasarNombre=()=>{
     } 
 }
 let elegirAvatar = () => {
-    if(avatarRenSeleccion.checked == true){ //Indico qué hacer si se elig uno u otro avatar
+    if(avatarRenSeleccion.checked == true){
         divDeAvatar.style.display='none';
         divDeAvatar.style.visibility='hidden';
         perfilNana.style.display='none';
@@ -156,7 +156,7 @@ let elegirAvatar = () => {
 let crearMazo = () => {//Función para crear mazo uniendo numeros, palos y valores
     for (let i = 0; i < palos.length; i++) {
         for (let j = 0; j < numeros.length; j++) {
-            let puntos = numeros[j] <= 7 ? numeros[j] : 10;  // Asigno los puntos
+            let puntos = numeros[j] <= 7 ? numeros[j] : 10;  // Calculo los puntos
 
                 carta = {  // Creo la carta dentro del bucle
                 numero: numeros[j],
@@ -299,7 +299,7 @@ let apuesta = () => {
     }
 }
 
-let vaciarRadio=()=>{ 
+let vaciarRadio=()=>{
     for(let i=0; i<radioCompleto.length;i++){
         radioCompleto[i].checked=false
     }

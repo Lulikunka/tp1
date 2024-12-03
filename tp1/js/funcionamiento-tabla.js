@@ -7,7 +7,7 @@ if (recuperarDatos) {
     // Parsear los datos solo si existen
     let jugadoresRecuperados = JSON.parse(recuperarDatos);
 
-    // Accede a los elementos HTML donde mostrar los datos
+    // Ahora accedemos a los elementos HTML donde mostrar los datos
     let mostrarNombre = document.querySelector('#nombrePosicionesCartas');
     let mostrarAvatar = document.querySelector('#avatarPosicionesCartas');
     
@@ -19,7 +19,7 @@ if (recuperarDatos) {
         }
     };
 
-    // Llama a la función para mostrar los resultados
+    // Llamar a la función para mostrar los resultados
     mostrarResultados();
 
 } else {
